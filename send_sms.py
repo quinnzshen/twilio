@@ -8,12 +8,22 @@ auth_token  = "7076029eafcdbccba175309a50eccda3"
 try:
     client = TwilioRestClient(account_sid, auth_token)
  
-    message = client.messages.create(
-        body="Hello World",
-        to="+13016137169",    # User Phone Number
-        from_="+12405475057"  # Twilio Number
-    )
+    # message = client.messages.create(
+    #     body="Hello World",
+    #     to="+13016137169",    # User Phone Number
+    #     from_="+12405475057"  # Twilio Number
+    # )
+    messages = client.messages.list()
+    last_message = messages[len(messages) - 1]
 
-    print request.values
+    response = ""
+    # for msg in messages:
+    #     print msg.body
+    #     print msg.to
+    #     print msg.from_
+    response += "From: " + last_message.from_ + "\n"
+    response += "To: " + last_message.to + "\n"
+    response += "Body: " + last_message.body
+    print response
 except twilio.TwilioRestException as e:
     print e
