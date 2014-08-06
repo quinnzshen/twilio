@@ -13,20 +13,22 @@ app = Flask(__name__)
 def hello():
     """Display texted message."""
     # body = request.values.get('Body', None)
-    client = TwilioRestClient(account_sid, auth_token)
 
-    messages = client.messages.list()
-    last_message = messages[0]
+    "Do nothing but log"
+    # client = TwilioRestClient(account_sid, auth_token)
 
-    response = ""
-    response += "From: " + last_message.from_ + "\n"
-    response += "To: " + last_message.to + "\n"
-    response += "Body: " + last_message.body
+    # messages = client.messages.list()
+    # last_message = messages[0]
 
-    resp = twilio.twiml.Response()
-    resp.message(response)
+    # response = ""
+    # response += "From: " + last_message.from_ + "\n"
+    # response += "To: " + last_message.to + "\n"
+    # response += "Body: " + last_message.body
 
-    return str(resp)
+    # resp = twilio.twiml.Response()
+    # resp.message(response)
+
+    # return str(resp)
 
 if __name__ == "__main__":
     app.run()
