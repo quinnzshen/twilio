@@ -15,13 +15,16 @@ def hello():
     # body = request.values.get('Body', None)
 
     "Do nothing but log"
-    client = TwilioRestClient(account_sid, auth_token)
 
-    message = client.messages.create(
-        body=request.values.get('Body', None),
-        to="+13016137169",    # User Phone Number
-        from_="+12405475057"  # Twilio Number
-    )
+    resp = twilio.twiml.Response()
+    resp.play("""https://dl-web.dropbox.com/get/Nokia/Dial%2034.mp3?_subject_uid=68290986&w=AABk-yLVCNEdnXuytj5qZ2mOE1dbmurUwr2RyLhZyn7lSA""")
+    # client = TwilioRestClient(account_sid, auth_token)
+
+    # message = client.messages.create(
+    #     body=request.values.get('Body', None),
+    #     to="+13016137169",    # User Phone Number
+    #     from_="+12405475057"  # Twilio Number
+    # )
     # messages = client.messages.list()
     # last_message = messages[0]
 
@@ -33,7 +36,7 @@ def hello():
     # resp = twilio.twiml.Response()
     # resp.message(response)
 
-    # return str(resp)
+    return str(resp)
 
 if __name__ == "__main__":
     app.run()
