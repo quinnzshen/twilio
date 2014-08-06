@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
     """Display texted message."""
 
-    return request.values
+    return "Hello World!"
 
 if __name__ == "__main__":
     app.run()
