@@ -16,7 +16,7 @@ def hello():
     client = TwilioRestClient(account_sid, auth_token)
 
     messages = client.messages.list()
-    last_message = messages[len(messages) - 1]
+    last_message = messages[0]
 
     response = ""
     response += "From: " + last_message.from_ + "\n"
