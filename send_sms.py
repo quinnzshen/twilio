@@ -14,6 +14,6 @@ try:
         from_="+12405475057"  # Twilio Number
     )
 
-    print message.sid
+    print request.values
 except twilio.TwilioRestException as e:
     print e

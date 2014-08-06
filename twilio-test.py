@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
-    return "Hello World!"
+    """Display texted message."""
+
+    return request.values
 
 if __name__ == "__main__":
     app.run()
