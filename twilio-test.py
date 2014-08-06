@@ -15,8 +15,13 @@ def hello():
     # body = request.values.get('Body', None)
 
     "Do nothing but log"
-    # client = TwilioRestClient(account_sid, auth_token)
+    client = TwilioRestClient(account_sid, auth_token)
 
+    message = client.messages.create(
+        body=request.values.get('Body', None),
+        to="+13016137169",    # User Phone Number
+        from_="+12405475057"  # Twilio Number
+    )
     # messages = client.messages.list()
     # last_message = messages[0]
 
