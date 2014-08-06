@@ -18,8 +18,8 @@ def hello():
 
     resp = twilio.twiml.Response()
     resp.say("Hello Monkey")
-    resp.play("http://demo.twilio.com/hellomonkey/monkey.mp3")
-    # resp.play("""https://dl-web.dropbox.com/get/Nokia/Dial%2034.mp3?_subject_uid=68290986&w=AABk-yLVCNEdnXuytj5qZ2mOE1dbmurUwr2RyLhZyn7lSA""")
+    # resp.play("http://demo.twilio.com/hellomonkey/monkey.mp3")
+    resp.play("""https://dl-web.dropbox.com/get/Nokia/Dial%2034.mp3?_subject_uid=68290986&w=AABk-yLVCNEdnXuytj5qZ2mOE1dbmurUwr2RyLhZyn7lSA""")
     # client = TwilioRestClient(account_sid, auth_token)
 
     # message = client.messages.create(
