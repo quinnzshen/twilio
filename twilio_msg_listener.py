@@ -16,15 +16,15 @@ try:
         if size != len(messages):
             new_message = messages[0]
 
-            print "New message!"
-            print "-----"
+            print "New message!\n-----"
             response = "From: " + new_message.from_ + "\n"
-            response += "To: " + new_message.to + "\n"
             response += "Body: " + new_message.body + "\n"
             print response
+
             size = len(messages)
         else:
-            print "No new messages."
+            pass
+            # print "No new messages."
         sleep(15)
 
 except twilio.TwilioRestException as e:

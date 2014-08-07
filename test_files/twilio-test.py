@@ -11,13 +11,9 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
-    """Display texted message."""
-    # body = request.values.get('Body', None)
-
-    "Do nothing but log"
-
-    resp = twilio.twiml.Response()
-    resp.say("Hello Monkey")
+    """Do nothing but log messages."""
+    # resp = twilio.twiml.Response()
+    # resp.say("Hello Monkey")
     # resp.play("http://demo.twilio.com/hellomonkey/monkey.mp3")
     # client = TwilioRestClient(account_sid, auth_token)
 
@@ -37,7 +33,7 @@ def hello():
     # resp = twilio.twiml.Response()
     # resp.message(response)
 
-    return str(resp)
+    # return str(resp)
 
 if __name__ == "__main__":
     app.run()
